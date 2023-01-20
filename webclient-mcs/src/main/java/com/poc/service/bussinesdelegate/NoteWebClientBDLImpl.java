@@ -42,7 +42,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
                     .retrieve()
                     .bodyToMono(NoteDTO.class);
         } catch (Exception e) {
-            log.error("Error while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
+            log.error("Error createNote while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
             e.printStackTrace();
             throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
@@ -57,7 +57,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
                     .retrieve()
                     .bodyToMono(NoteDTO.class);
         } catch (Exception e) {
-            log.error("Error while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
+            log.error("Error updateNote while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
             e.printStackTrace();
             throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
@@ -69,7 +69,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
             log.info("----- deleteNoteById : {}", id);
             return webClient.delete().uri(webClientBaseUrl + "/" + id).retrieve().bodyToMono(String.class);
         } catch (Exception e) {
-            log.error("Error while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
+            log.error("Error deleteNoteById while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
             e.printStackTrace();
             throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
@@ -82,7 +82,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
             return webClient.get().uri(webClientBaseUrl + "/" + id)
                     .retrieve().bodyToMono(NoteDTO.class);
         } catch (Exception e) {
-            log.error("Error while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
+            log.error("Error getNoteById while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
             e.printStackTrace();
             throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
@@ -99,7 +99,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
                 return webClient.get().uri(webClientBaseUrl + "?title=" + title + "&page=" + page + "&size=" + size).retrieve().bodyToFlux(NotePaginatedDTO.class);
             }
         } catch (Exception e) {
-            log.error("Error while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
+            log.error("Error getAllNotesByTitle while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
             e.printStackTrace();
             throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
