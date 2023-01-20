@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: LOCAL
+  main:
+    lazy-initialization: 'true'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    throw-exception-if-no-handler-found: 'true'
+  resources:
+    add-mappings: 'false'
+  codec:
+    max-in-memory-size: 1MB
+cors:
+  allowed:
+    origins: '*'
+application:
+  description: '@project.description@'
+  name: '@project.artifactId@'
+build:
+  timestamp: '@maven.build.timestamp@'
+  version: '@project.version@'
+modules:
+  logging:
+    logs:
+      folder:
+        path: ./logs
+    application:
+      name: '@project.artifactId@'
+server:
+  port: '8082'
+
+webClient:
+  baseUrl: http://localhost:8081/notes
