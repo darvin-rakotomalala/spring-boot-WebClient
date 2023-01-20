@@ -6,9 +6,7 @@ public enum ErrorsEnum {
      * ERR_MCS_POC
      */
 
-    ERR_MCS_NOTE_TITLE_EMPTY("Error occurred - Note title shouldn't be NULL or EMPTY"),
-    ERR_MCS_NOTE_OBJECT_EMPTY("Error occurred - object Note shouldn't be NULL or EMPTY"),
-    ERR_MCS_NOTE_NOT_FOUND("Error occurred - no Note found with this id");
+    ERR_CALL_API_NOTE("Error occurred - call client Note error");
 
     private final String errorMessage;
 

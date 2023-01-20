@@ -1,5 +1,7 @@
 package com.poc.service.bussinesdelegate;
 
+import com.poc.exception.ErrorsEnum;
+import com.poc.exception.FunctionalException;
 import com.poc.model.dto.NoteDTO;
 import com.poc.model.dto.NotePaginatedDTO;
 import lombok.RequiredArgsConstructor;
@@ -42,7 +44,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
         } catch (Exception e) {
             log.error("Error createNote : {} {}", e.getMessage(), e);
             e.printStackTrace();
-            throw e;
+            throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
     }
 
@@ -57,7 +59,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
         } catch (Exception e) {
             log.error("Error updateNote : {} {}", e.getMessage(), e);
             e.printStackTrace();
-            throw e;
+            throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
     }
 
@@ -69,7 +71,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
         } catch (Exception e) {
             log.error("Error deleteNoteById : {} {}", e.getMessage(), e);
             e.printStackTrace();
-            throw e;
+            throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
     }
 
@@ -82,7 +84,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
         } catch (Exception e) {
             log.error("Error getNoteById : {} {}", e.getMessage(), e);
             e.printStackTrace();
-            throw e;
+            throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
     }
 
@@ -99,7 +101,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
         } catch (Exception e) {
             log.error("Error getAllNotesByTitle : {} {}", e.getMessage(), e);
             e.printStackTrace();
-            throw e;
+            throw new FunctionalException(ErrorsEnum.ERR_CALL_API_NOTE.getErrorMessage());
         }
     }
 
