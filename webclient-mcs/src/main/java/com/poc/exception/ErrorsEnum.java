@@ -6,7 +6,7 @@ public enum ErrorsEnum {
      * ERR_MCS_POC
      */
 
-    ERR_CALL_API_NOTE("Error occurred - call client Note error");
+    ERR_CALL_API_NOTE("Error occurred - error while calling client Note");
 
     private final String errorMessage;
 
