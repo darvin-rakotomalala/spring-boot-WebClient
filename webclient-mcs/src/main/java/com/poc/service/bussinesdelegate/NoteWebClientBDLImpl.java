@@ -92,12 +92,7 @@ public class NoteWebClientBDLImpl implements NoteWebClientBDL {
     public Flux<NotePaginatedDTO> getAllNotesByTitle(String title, int page, int size) {
         try {
             log.info("----- getAllNotesByTitle - title : {} page : {} size : {}", title, page, size);
-            if (StringUtils.isBlank(title)) {
-                return webClient.get().uri(webClientBaseUrl + "?page=" + page + "&size=" + size)
-                        .retrieve().bodyToFlux(NotePaginatedDTO.class);
-            } else {
-                return webClient.get().uri(webClientBaseUrl + "?title=" + title + "&page=" + page + "&size=" + size).retrieve().bodyToFlux(NotePaginatedDTO.class);
-            }
+            return webClient.get().uri(webClientBaseUrl + "?title=" + title + "&page=" + page + "&size=" + size).retrieve().bodyToFlux(NotePaginatedDTO.class);
         } catch (Exception e) {
             log.error("Error getAllNotesByTitle while calling WS : {}, message : {}", webClientBaseUrl, e.getMessage());
             e.printStackTrace();
