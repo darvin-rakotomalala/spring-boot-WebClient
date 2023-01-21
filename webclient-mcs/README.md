@@ -12,7 +12,7 @@ Dans ce repo, nous allons avoir comment implementer Spring WebClient (avec Exemp
 
 ### Exemples
 ---
-- `webclient-mcs` un client Spring WebClient qui s'exécute sur le port 8082 et utlise les API REST de `socle-spring-data-jpa`. 
+- `webclient-mcs` un client Spring WebClient qui s'exécute sur le port 8082 et utilise les API REST de `socle-spring-data-jpa`. 
 
 ### Exécuter et tester le projet
 ---
